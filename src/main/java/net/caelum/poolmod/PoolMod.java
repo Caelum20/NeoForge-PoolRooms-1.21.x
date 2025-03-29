@@ -1,6 +1,8 @@
-package net.caelum.tutorialmod;
+package net.caelum.poolmod;
 
-import net.caelum.tutorialmod.item.ModItems;
+import net.caelum.poolmod.block.ModBlocks;
+import net.caelum.poolmod.item.ModCreativeModeTabs;
+import net.caelum.poolmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -20,14 +22,14 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(TutorialMod.MOD_ID)
-public class TutorialMod {
-    public static final String MOD_ID = "tutorialmod";
+@Mod(PoolMod.MOD_ID)
+public class PoolMod {
+    public static final String MOD_ID = "poolmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public TutorialMod(IEventBus modEventBus, ModContainer modContainer) {
+    public PoolMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -36,7 +38,10 @@ public class TutorialMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -51,7 +56,13 @@ public class TutorialMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.LIMINALGAE_LEAF);
+            event.accept(ModItems.POOLFISH);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.POOLTILE_BLOCK);
+            event.accept(ModBlocks.LIMINAGLAE_BLOCK);
         }
     }
 

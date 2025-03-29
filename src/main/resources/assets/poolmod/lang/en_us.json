@@ -1,0 +1,10 @@
+{
+  "item.poolmod.poolfish": "Pool Fish",
+  "item.poolmod.liminalgae_leaf": "Liminalgae Leaf",
+
+  "block.poolmod.pooltile_block": "Pool Tiles",
+  "block.poolmod.liminalgae_block": "Liminalgae Block",
+
+  "creativetab.poolmod.pool_items": "Pool Items",
+  "creativetab.poolmod.pool_blocks": "Pool Blocks"
+}
