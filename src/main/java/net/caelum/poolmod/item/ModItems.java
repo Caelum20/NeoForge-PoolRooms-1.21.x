@@ -10,10 +10,10 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PoolMod.MOD_ID);
 
     public static final DeferredItem<Item> LIMINALGAE_LEAF = ITEMS.register("liminalgae_leaf",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> POOLFISH = ITEMS.register("poolfish",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoodProperties.LIMINALGAE)));
 
+    public static final DeferredItem<Item> POOLFISH = ITEMS.register("poolfish",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.POOLFISH)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

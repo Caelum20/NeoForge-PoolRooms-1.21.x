@@ -22,7 +22,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> POOLTILE_BLOCK = registerBlock("pooltile_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(-1f).sound(SoundType.DEEPSLATE_TILES)));
-    public static final DeferredBlock<Block> LIMINAGLAE_BLOCK = registerBlock("liminalgae_block.json",
+    public static final DeferredBlock<Block> LIMINAGLAE_BLOCK = registerBlock("liminalgae_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(.2f).sound(SoundType.GRASS).lightLevel(GlowLichenBlock.emission(7)).instabreak().noOcclusion().randomTicks()));
 
