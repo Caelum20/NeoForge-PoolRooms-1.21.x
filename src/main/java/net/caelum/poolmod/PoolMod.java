@@ -1,7 +1,6 @@
 package net.caelum.poolmod;
 
 import net.caelum.poolmod.block.ModBlocks;
-import net.caelum.poolmod.block.entity.ModBlockEntities;
 import net.caelum.poolmod.item.ModCreativeModeTabs;
 import net.caelum.poolmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -44,8 +43,6 @@ public class PoolMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-        ModBlockEntities.register(modEventBus);
-
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -66,7 +63,6 @@ public class PoolMod {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.POOLTILE_BLOCK);
             event.accept(ModBlocks.LIMINAGLAE_BLOCK);
-            event.accept(ModBlocks.FIRSTSKYLAYER);
         }
     }
 

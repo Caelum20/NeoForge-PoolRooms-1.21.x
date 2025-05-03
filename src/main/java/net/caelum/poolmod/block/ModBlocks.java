@@ -1,7 +1,6 @@
 package net.caelum.poolmod.block;
 
 import net.caelum.poolmod.PoolMod;
-import net.caelum.poolmod.block.custom.FirstSkyLayer;
 import net.caelum.poolmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -25,8 +24,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> LIMINAGLAE_BLOCK = registerBlock("liminalgae_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(.2f).sound(SoundType.GRASS).lightLevel(GlowLichenBlock.emission(7)).instabreak().noOcclusion().randomTicks()));
-    public static final DeferredBlock<Block> FIRSTSKYLAYER = registerBlock("firstlayersky",
-            () -> new FirstSkyLayer(BlockBehaviour.Properties.of().noCollission()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
